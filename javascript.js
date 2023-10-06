@@ -3,3 +3,8 @@ function getComputerChoice() {
     return rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
     }
     
+function getUserChoice(){
+    return prompt("Rock, Paper or Scissors?" ).toLowerCase();
+    
+}
+           
