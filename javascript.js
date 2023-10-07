@@ -11,42 +11,48 @@ function getUserChoice(){
 
 function playRound(comChoice , useChoice){
 if ((comChoice === "rock" && useChoice === "paper")
-|| (comChoice === "paper" && useChoice === "scissors")
-|| (comChoice === "scissors" && useChoice === "rock")) {
-return "You Win!";
+   || (comChoice === "paper" && useChoice === "scissors")
+   || (comChoice === "scissors" && useChoice === "rock")) {
+  return "You Win!";
 } else if (comChoice === useChoice) {
-return "It's a tie!";
+  return "It's a tie!";
 } else {
- return "You Lose!";
+   return "You Lose!";
 }
 }
 
 
-function game() {
-    let compWins = 0;
-    let userWins = 0;
-    let ties = 0;
-    for (let i = 1; i < 6; i++) {
-       let result = playRound(getComputerChoice(), getUserChoice())
+function playGame() {
+  let compWins = 0;
+  let userWins = 0; 
+  let ties = 0;
+  for (let i = 1; i < 6; i++) {
+    let result = playRound(getComputerChoice(), getUserChoice())
         if (result === "You Win!") {
-            userWins++ 
+            userWins++;
         } else if (result === "You Lose!") {
-            compWins++
+            compWins++;
         } else { 
-           ties++
+           ties++;
         };
     }
 
     if (compWins > userWins) {
-      return "Computer Wins!\n" + `You won ${userWins} times\nComputer won ${compWins} times\nIt was a tie ${ties} times` ;
+      return "Computer Wins!\n" + `You won ${userWins} times\n
+              Computer won ${compWins} times\n
+              It was a tie ${ties} times` ;
         } else if (compWins < userWins) {
-            return "You Win!\n" + `You won ${userWins} times\nComputer won ${compWins} times\nIt was a tie ${ties} times`;
+            return "You Win!\n" + `You won ${userWins} times\n
+            Computer won ${compWins} times\n
+            It was a tie ${ties} times`;
         } else {
-            return "It's a tie!\n" + `You won ${userWins} times\nComputer won ${compWins} times\nIt was a tie ${ties} times`;
+            return "It's a tie!\n" + `You won ${userWins} times\n
+            Computer won ${compWins} times\n
+            It was a tie ${ties} times`;
         }
         
     
 
 }
 
-alert(game())
+alert(playGame());
