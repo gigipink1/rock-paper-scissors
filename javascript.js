@@ -4,13 +4,9 @@ function getComputerChoice() {
     }
     
 function getUserChoice(){
-    return prompt("Rock, Paper or Scissors?" ).toLowerCase();
-    
+    const userChoice = prompt("Rock, Paper or Scissors?" ).toLowerCase();
+    return userChoice;
 }
-
-
-const computerSelection = getComputerChoice();
-const userSelection = getUserChoice()
 
 
 function playRound(comChoice , useChoice){
@@ -29,17 +25,28 @@ return "It's a tie!";
 function game() {
     let compWins = 0;
     let userWins = 0;
-    for (let i = 1; i < 5; i++) {
-       let result = playRound(getComputerChoice, getUserChoice())
+    let ties = 0;
+    for (let i = 1; i < 6; i++) {
+       let result = playRound(getComputerChoice(), getUserChoice())
         if (result === "You Win!") {
             userWins++ 
-        } else if (result === "It's a tie!") {
+        } else if (result === "You Lose!") {
             compWins++
         } else { 
-
+           ties++
         };
     }
 
+    if (compWins > userWins) {
+      return "Computer Wins!\n" + `You won ${userWins} times\nComputer won ${compWins} times\nIt was a tie ${ties} times` ;
+        } else if (compWins < userWins) {
+            return "You Win!\n" + `You won ${userWins} times\nComputer won ${compWins} times\nIt was a tie ${ties} times`;
+        } else {
+            return "It's a tie!\n" + `You won ${userWins} times\nComputer won ${compWins} times\nIt was a tie ${ties} times`;
+        }
+        
+    
+
 }
 
-console.log(game())
+alert(game())
