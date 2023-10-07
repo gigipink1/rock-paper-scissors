@@ -24,3 +24,22 @@ return "It's a tie!";
  return "You Lose!";
 }
 }
+
+
+function game() {
+    let compWins = 0;
+    let userWins = 0;
+    for (let i = 1; i < 5; i++) {
+       let result = playRound(getComputerChoice, getUserChoice())
+        if (result === "You Win!") {
+            userWins++ 
+        } else if (result === "It's a tie!") {
+            compWins++
+        } else { 
+
+        };
+    }
+
+}
+
+console.log(game())
