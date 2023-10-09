@@ -43,8 +43,27 @@ function PlayRound (button) {
         comPick.textContent =  `Computer Choice was:  ${comChoice}`;
         comStats.textContent = `Computer Wins: ${++comCounter}`;
     }
+if (playerCounter === 5 || comCounter === 5) showResult();
 
+}
 
+function showResult() {
+    const header = document.querySelector('header');
+    const results = document.createElement('p')
+    const resetBtn = document.createElement('button');
+    results.style.fontSize = '36px';
+    if (playerCounter === 5) { 
+       results.textContent = 'You Won!'; 
+    } else if (comCounter === 5) {
+        results.textContent = 'You Lost.';
+    }
+    header.appendChild(results);                               
+    resetBtn.textContent = 'Play Again?';
+    header.appendChild(resetBtn);
+    resetBtn.addEventListener('click', () => {
+        location.reload();
+    });
 
 
 }
+
