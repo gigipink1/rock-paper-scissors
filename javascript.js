@@ -21,38 +21,3 @@ if ((comChoice === "rock" && useChoice === "paper")
 }
 }
 
-
-function playGame() {
-  let compWins = 0;
-  let userWins = 0; 
-  let ties = 0;
-  for (let i = 1; i < 6; i++) {
-    let result = playRound(getComputerChoice(), getUserChoice())
-        if (result === "You Win!") {
-            userWins++;
-        } else if (result === "You Lose!") {
-            compWins++;
-        } else { 
-           ties++;
-        };
-    }
-
-    if (compWins > userWins) {
-      return "Computer Wins!\n" + `You won ${userWins} times\n
-              Computer won ${compWins} times\n
-              It was a tie ${ties} times` ;
-        } else if (compWins < userWins) {
-            return "You Win!\n" + `You won ${userWins} times\n
-            Computer won ${compWins} times\n
-            It was a tie ${ties} times`;
-        } else {
-            return "It's a tie!\n" + `You won ${userWins} times\n
-            Computer won ${compWins} times\n
-            It was a tie ${ties} times`;
-        }
-        
-    
-
-}
-
-alert(playGame());
