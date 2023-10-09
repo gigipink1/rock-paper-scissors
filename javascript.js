@@ -3,9 +3,9 @@ function getComputerChoice() {
     return rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
     }
     
-function getUserChoice(){
-    const userChoice = prompt("Rock, Paper or Scissors?" ).toLowerCase();
-    return userChoice;
+function getUserChoice(button){
+    console.log(button.id)
+    return button.id;
 }
 
 
@@ -21,3 +21,10 @@ if ((comChoice === "rock" && useChoice === "paper")
 }
 }
 
+const buttons = document.querySelectorAll('button'); 
+
+buttons.forEach((button) => {
+    button.addEventListener('click', function () {getUserChoice(button);} );
+
+
+});
